@@ -29,16 +29,39 @@ body{
   position:relative;
 
   font-family:'Panda',sans-serif;
-
-  background:
-    linear-gradient(
-      180deg,
-      #fff8fb 0%,
-      #ffeef5 100%
-    );
 }
 
-/* 背景 */
+/* 背景画像 */
+
+.bg{
+
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  z-index:-3;
+}
+
+/* 白オーバーレイ */
+
+.overlay{
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    rgba(255,248,252,0.72);
+
+  z-index:-2;
+}
+
+/* 背景装飾 */
 
 .bgCircle{
 
@@ -47,7 +70,9 @@ body{
   border-radius:999px;
 
   background:
-    rgba(255,255,255,0.5);
+    rgba(255,255,255,0.42);
+
+  z-index:-1;
 }
 
 .circle1{
@@ -137,7 +162,7 @@ body{
   width:180px;
 
   background:
-    rgba(255,255,255,0.9);
+    rgba(255,255,255,0.88);
 
   border-radius:34px;
 
@@ -161,6 +186,9 @@ body{
   color:#ff8fb0;
 
   margin-bottom:10px;
+
+  text-shadow:
+    0 2px 0 #fff;
 }
 
 .card img{
@@ -194,9 +222,17 @@ body{
 
 <body>
 
+<!-- 背景 -->
+
+<img src="haikei.png" class="bg">
+
+<div class="overlay"></div>
+
 <div class="bgCircle circle1"></div>
 <div class="bgCircle circle2"></div>
 <div class="bgCircle circle3"></div>
+
+<!-- タイトル -->
 
 <div class="titleArea">
 
@@ -211,11 +247,13 @@ body{
 
 </div>
 
+<!-- 犬一覧 -->
+
 <div class="dogWrap">
 
   <div class="card">
 
-    <div class="rank">🥇</div>
+    <div class="rank">1位</div>
 
     <img src="pomeranian.png">
 
@@ -227,7 +265,7 @@ body{
 
   <div class="card">
 
-    <div class="rank">🥈</div>
+    <div class="rank">2位</div>
 
     <img src="husky.png">
 
@@ -239,7 +277,7 @@ body{
 
   <div class="card">
 
-    <div class="rank">🥉</div>
+    <div class="rank">3位</div>
 
     <img src="pug.png">
 
